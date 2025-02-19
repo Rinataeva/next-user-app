@@ -1,11 +1,11 @@
 type Props = {
-    params: {
-        id: string;
-    };
+  params: {
+    id: string;
+  };
 };
 
 export function generateMetadata({ params }: Props) {
-    return {
-        title: `User ${params.id}`,
-    };
+  return {
+    title: `User ${params.id}`,
+  };
 }

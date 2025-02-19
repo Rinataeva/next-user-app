@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ModeToggle } from "./ui/toggle-mode";
 export function Navigation() {
   return (
     <nav>
@@ -8,6 +9,9 @@ export function Navigation() {
         </li>
         <li>
           <Link href="/user">User</Link>
+        </li>
+        <li>
+           <ModeToggle/> 
         </li>
       </ul>
     </nav>
