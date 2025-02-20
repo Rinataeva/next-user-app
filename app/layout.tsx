@@ -31,9 +31,9 @@ export default function RootLayout({
           attribute="class"
           defaultTheme="system"
         >
-          <Header />
+          <Header className=" bg-primary sticky top-0 z-50 flex justify-between py-3" />
           <main className="min-h-screen">{children}</main>
-          <Footer />
+          <Footer className=" bg-primary sticky bottom-0 z-50 flex gap-10" />
         </ThemeProvider>
       </body>
     </html>

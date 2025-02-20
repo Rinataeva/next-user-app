@@ -1,12 +1,14 @@
 import {Navigation} from "./Navigation";
 import { Button } from "@/components/ui/button";
 
-const Header = () => {
+interface HeaderProps {
+    className?: string;
+}
+export const Header: React.FC<HeaderProps> = ({className}) => {
     return (
-        <header className="bg-gray-900 text-white p-4 cursor-pointer flex gap-4">
-            <Navigation/>
-            <Button>Learn More</Button>
+        <header className={className}>
+            <Navigation className="bg-slate-200 py-1 px-1 font-bold"/>
+            <Button className="font-bold">Message us</Button>
         </header>
     );
 }
-export { Header };

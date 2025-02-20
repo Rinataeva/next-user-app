@@ -1,9 +1,13 @@
 import Link from "next/link";
 import { ModeToggle } from "./ui/toggle-mode";
-export function Navigation() {
+
+interface NavigationProps {
+  className?: string;
+}
+export const Navigation: React.FC<NavigationProps> = ({className}) => {
   return (
-    <nav>
-      <ul className="flex gap-4">
+    <nav className={className}>
+      <ul className="flex gap-10">
         <li>
           <Link href="/">Home</Link>
         </li>
