@@ -19,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
@@ -31,7 +31,7 @@ export default function RootLayout({
           attribute="class"
           defaultTheme="system"
         >
-          <Header className=" bg-primary sticky top-0 z-50 flex justify-between py-3" />
+          <Header className=" bg-primary sticky top-0 z-50 flex justify-between py-1 px-4" />
           <main className="min-h-screen">{children}</main>
           <Footer className=" bg-primary sticky bottom-0 z-50 flex gap-10" />
         </ThemeProvider>
