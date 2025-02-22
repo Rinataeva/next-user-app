@@ -1,15 +1,12 @@
 import { Button } from "@/components/ui/button";
-type User = {
-  id: number;
-  name: string;
-  username: string;
-  email: string;
-  phone: string;
-};
+import Link from "next/link";
+import { userApiService } from "../services/UserApiService";
+import type { User } from "../types/user";
 
 export default async function UsersServer() {
-  const response = await fetch("https://jsonplaceholder.typicode.com/users");
-  const users: User[] = await response.json();
+  await new Promise((resolve) => setTimeout(resolve, 2000));
+  const users: User[] = await userApiService.getAllUsers();
+
   return (
     <ul className="space-y-4 p-4 bg-slate-200">
       {users.map((user) => (
@@ -19,10 +16,11 @@ export default async function UsersServer() {
         >
           <div className="font-bold">{user.name}</div>
           <div className="text-sm">
-            <div>Username: {user.username}</div>
             <div>Email: {user.email}</div>
-            <div>Phone: {user.phone}</div>
-            <Button>More info</Button>
+            <div>Company: {user.company.name}</div>
+            <Link href={`/user/${user.id}`}>
+              <Button>More info</Button>
+            </Link>
           </div>
         </li>
       ))}

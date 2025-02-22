@@ -1,5 +1,4 @@
-import UsersServer from "./users-server/page";
-import { Button } from "@/components/ui/button";
+import UsersServer from "./users/page";
 export default function Home() {
   return (
     <section className="py-10 flex flex-col items-center gap-5 text-center">
@@ -8,8 +7,7 @@ export default function Home() {
         Here comes a list of JSON-placeholder users
       </p>
       <div className="flex gap-5 py-6"></div>
-<UsersServer/>
-      <Button>Learn More</Button>
+      <UsersServer />
     </section>
   );
 }
