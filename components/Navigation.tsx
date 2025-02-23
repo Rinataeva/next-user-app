@@ -7,12 +7,12 @@ interface NavigationProps {
 export const Navigation: React.FC<NavigationProps> = ({className}) => {
   return (
     <nav className={className}>
-      <ul className="flex gap-10">
+      <ul className="flex gap-4">
         <li>
           <Link href="/">Home</Link>
         </li>
         <li>
-          <Link href="/user">User</Link>
+          <Link href="/users">Users</Link>
         </li>
         <li>
            <ModeToggle/> 

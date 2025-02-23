@@ -1,5 +1,5 @@
 import {Navigation} from "./Navigation";
-import { Button } from "@/components/ui/button";
+
 
 interface HeaderProps {
     className?: string;
@@ -7,8 +7,7 @@ interface HeaderProps {
 export const Header: React.FC<HeaderProps> = ({className}) => {
     return (
         <header className={className}>
-            <Navigation className="bg-slate-200 py-1 px-1 font-bold"/>
-            <Button className="font-bold">Message us</Button>
+            <Navigation className="pt-2 pb-2 bg-center py-1 px-1 ml-5 " />
         </header>
     );
 }
