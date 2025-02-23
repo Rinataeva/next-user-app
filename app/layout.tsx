@@ -19,21 +19,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased",
+          "min-h-screen bg-background font-sans antialiased overflow-hidden",
           inter.variable
         )}
       >
         {" "}
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-        >
-          <Header />
+        <ThemeProvider attribute="class" defaultTheme="system">
+          <Header className="sticky top-0 z-50 font-bold" />
           <main className="min-h-screen">{children}</main>
-          <Footer />
+          <Footer className="sticky bottom-0 z-50 flex gap-4" />
         </ThemeProvider>
       </body>
     </html>
