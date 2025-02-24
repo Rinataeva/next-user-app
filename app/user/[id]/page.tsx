@@ -11,7 +11,8 @@ import {
 import Link from "next/link";
 
 export default async function UserPage({ params }: { params: { id: string } }) {
-  const userId = Number(params.id);
+  const resolvedParams = params instanceof Promise ? await params : params;
+  const userId = resolvedParams.id;
   const user: User = await userApiService.getUserById(userId);
 
   return (
