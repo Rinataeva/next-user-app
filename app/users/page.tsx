@@ -3,7 +3,6 @@ import type { User } from "../types/user";
 import UserSearch from "./search"; 
 
 export default async function UsersServer() {
-  await new Promise((resolve) => setTimeout(resolve, 2000));
   const users: User[] = await userApiService.getAllUsers();
 
   return (
